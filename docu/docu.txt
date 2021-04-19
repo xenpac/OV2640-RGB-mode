@@ -1,0 +1,22 @@
+This software shows the performance of the ov2640 camera in rgb565 or yuv422 mode.
+The framerate is slow because of the high bytes-per-frame and streaming in bmp-mode, or jpg-mode which needs software conversion.
+
+After reset the bootup will stop for 2 seconds at message "+++LoginEdit+++".
+If you hit the SPACE key at this point you will enter an interactive function to enter/edit Wifi credentials which are saved in NVS (eeprom).
+You obviouly need to be connected with a terminal (putty) to the serial port at 8N1, 115200.
+
+During bootup the red little debugLED will be lit until a successful wifi connection has been established.
+This way you can check, if camera is connected and running.(Led not lit)
+
+The default camera parameters after reset are:  640*480.
+
+This is a esp-idf project using version 3.3.1
+
+to get this version for linux use:
+git clone -b v3.3.1 --recursive https://github.com/espressif/esp-idf.git
+
+It uses the old style make syntax.
+
+make ..to build
+make flash monitor 
+make monitor
